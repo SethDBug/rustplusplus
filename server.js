@@ -28,8 +28,9 @@ connectToRustPlus(); // Used to setup rustPlus object.
 
 
 const app = express();
-const server = app.listen(80, function(){
-    console.log('listening for requests on port 80,');
+const port = process.env.PORT || 3000;
+const server = app.listen(port, function(){
+    console.log(`listening for requests on port ${port}`);
 });
 app.use(express.static('public'));
 
